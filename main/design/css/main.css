@@ -1,0 +1,88 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+#navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(5, 74, 138);
+    margin: 0 0 20px 0;
+    font-size: 1.2em;
+}
+
+#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navigation ul li {
+    float: left;
+}
+
+#navigation ul li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#container {
+    position: relative;
+    margin: 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.link-box {
+    width: 60%;
+    height: 30px;
+    font-size: 1.4em;
+}
+
+.button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 1.6em;
+}
+
+#shortcontainer {
+    margin-top: 20px;
+    padding: 10px;
+    height: 30px;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: rgb(198, 228, 255);
+}
+
+.shortitem {
+    margin: auto;
+    display: block;
+
+}
+
+#shortlink {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#longlink {
+    font-size: 1.4em;
+}
+
+

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h2>View all tags</h2>
+    {% for tag in tags %}
+    <p>
+        <b>Tag name: {{ tag.title }}</b><br>
+        Description: {{ tag.description }}<br>
+        Type: {{ tag.get_tag_type_display }}<br>
+      
+        <a href="{% url 'tagdetails' id=tag.pk %}"><button name="edit" type="button" class="btn btn-sm btn-success">Edit</button></a>
+        {% comment %} <a href="#"><button name="edit" type="button" class="btn btn-main">Edit</button></a> {% endcomment %}
+    </p>
+{% endfor %}
+
+
+{% endblock %}

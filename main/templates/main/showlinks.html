@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h2>View all links</h2>
+    {% for link in links %}
+    <p>
+        <b>{{ link.title }}</b><br>
+        <a href="/{{ link.shortcode }}" target="_blank">{{link.shortcode }}</a> &#8674;
+        <a href="{{ link.url }}" target="_blank">{{ link.url }}</a>
+        <br>
+        {% comment %} <a href="/link/{{ link.id }}"><button name="edit" type="button">Edit</button></a> {% endcomment %}
+        <a href="{% url 'linkdetails' id=link.pk %}"><button name="edit" type="button" class="btn btn-sm btn-success">Edit</button></a>
+
+    </p>
+{% endfor %}
+
+
+{% endblock %}

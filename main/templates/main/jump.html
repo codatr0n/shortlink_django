@@ -1,0 +1,20 @@
+<html>
+<head>
+    <script>
+        function jump(link) {
+            window.location.replace(link)
+        }
+    </script>
+</head>
+<body onLoad="jump('{{ link.url }}')">
+{% comment %} <body> {% endcomment %}
+{% comment %} <p><a href="javascript:jump('{{ link.url }}')">Jump</a></p> {% endcomment %}
+{% if tags %}
+    {% for tag in tags %}
+    {% autoescape off %}
+    {{ tag.code }}
+    {% endautoescape %}
+    {% endfor %}
+{% endif %}
+</body>
+</html>

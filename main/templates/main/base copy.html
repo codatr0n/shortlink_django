@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?version={% now 'U' %}">
+</head>
+<body>
+    <div id="navigation">
+        <ul>
+            <li><a href="{% url 'homepage' %}">HOME</a></li>
+            <li><a href="{% url 'showlinks' %}">Show links</a></li>
+            <li><a href="{% url 'createlink' %}">Create link</a></li>
+            <li><a href="{% url 'showtags' %}">View tags</a></li>
+            <li><a href="{% url 'createtag' %}">Create tag</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <div id="container">
+
+        {% block content %}
+            if you see this, something is wrong!
+        {% endblock %}
+
+    </div>
+</body>
+</html>

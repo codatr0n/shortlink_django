@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h2>Tag details</h2>
+    <form action="{% url 'edittag' id=tag.id %}" method="post">
+    {% comment %} <form action="#" method="post"> {% endcomment %}
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" name="save" class="btn btn-sm btn-success">Save</button>
+        </div>
+    </form>
+
+    {% comment %} Form for delete button {% endcomment %}
+    <form action="{% url 'deletetag' id=tag.id %}" method="get">
+        <div class="form-group">
+            {% csrf_token %}
+            <button type="submit" name="delete" class="btn btn-sm btn-danger">Delete</button>
+        </div>
+    </form>
+
+{% endblock %}

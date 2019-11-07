@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h2>Create new short link</h2>
+    {% comment %} <form action="/link/create" method="post"> {% endcomment %}
+    <form action="{% url 'createlink' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" name="submit" class="btn btn-sm btn-success">Save</button>
+        </div>
+    </form>
+
+{% endblock %}

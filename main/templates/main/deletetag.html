@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h1>Delete tag</h1>
+    {% comment %} <form action="/link/{{ link.id }}/delete" method="post"> {% endcomment %}
+    <form action="{% url 'deletetag' id=tag.id %}" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete<br>the tag for <b>{{ tag.title }}</b>?</p>
+        <button type="submit" name="submit">Confirm</button>
+        <a href="javascript:document.location.replace('{% url 'showtags' %}');"><button name="cancel">Cancel</button>
+    </form>
+
+{% endblock %}
